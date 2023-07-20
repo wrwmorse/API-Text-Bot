@@ -1,0 +1,31 @@
+pip install twilio
+pip install schedule
+pip install naas
+
+import schedule
+import time
+import random
+import os
+from twilio.rest import Client
+import threading
+import naas
+
+###_reminder = ['Hey, reminder to text the guys to be in the wedding'
+    , 'Hey, did you text the guys yet?'
+    , 'What do you want to do for your bachelor party?'
+     ,'We cant watch marvel until you text the guys'
+    ,'Hey you text the guys yet? better do it soon!'
+               ,'Go FSU!']
+
+def annoy_###():
+    account_sid = "###########################"
+    auth_token = "##########################"
+    client = Client(account_sid, auth_token)
+    quote = ###_reminder[random.randint(0,len(###_reminder)-1)]
+    client.messages.create(body=quote,
+                             from_='+15707018428',
+                             to='+###########'
+                            )
+
+annoy_###()
+
